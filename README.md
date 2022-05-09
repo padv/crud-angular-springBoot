@@ -1,6 +1,6 @@
 CRUD Desenvolvido por Victor Padilha para desafio.
 
-Front-end desenvolvido em usando Angular e Angular Material.
+Front-end desenvolvido usando Angular e Angular Material.
 
 API desenvolvida em Spring Boot e com o banco de dados PostgreSQL.
 
