@@ -33,7 +33,7 @@ API
 
 (Propriedades da conexão podem ser configuradas em: crud-angular-springBoot\api\src\main\resources\templates\application.properties)
 
-1 - Baixe (www.postgresql.org/download/), instale e suba um banco PostgreSQL na porta 5432. Usuário postgres senha root
+1 - Baixe (www.postgresql.org/download/), instale e suba um banco PostgreSQL na porta 5432. Banco postgres Usuário postgres senha root
 
 2 - Baixe o Spring Tools 4 (JRE 11+) (https://spring.io/tools) e rode o entry point da API RestApiCrudDesafioApplication.java em: crud-angular-springBoot\api\src\main\java\com\restapidesafio\boot\restapicruddesafio\
 
