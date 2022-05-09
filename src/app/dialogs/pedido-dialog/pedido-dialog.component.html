@@ -1,0 +1,21 @@
+<h1 *ngIf="!isChange" mat-dialog-title>Criar entrada</h1>
+<h1 *ngIf="isChange" mat-dialog-title>Editar entrada</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Status</mat-label>
+    <mat-select type="enum" id="status" name="status" class="form-control" [(ngModel)]="data.status" #status="ngModel" required>
+      <mat-option *ngFor="let status of statusEnum | keyvalue" [value]="status.key"> <!-- CRIA O SELECT BASEADO NOS ENUMS -->
+        {{status.value}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field *ngIf="!isChange" appearance="fill">
+    <mat-label>Desconto (%)</mat-label>
+    <input matInput type="number" id="desconto" name="desconto" class="form-control" min="0" required max="100" [(ngModel)]="data.desconto" #desconto="ngModel" required>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button *ngIf="!isChange" mat-button [mat-dialog-close]="data"  [disabled]="status.invalid">Escolher Itens..</button>
+  <button *ngIf="isChange" mat-button [mat-dialog-close]="data" [disabled]="status.invalid">Editar</button>
+</div>

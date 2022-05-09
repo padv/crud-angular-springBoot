@@ -1,0 +1,32 @@
+<h1 *ngIf="!isChange" mat-dialog-title>Criar entrada</h1>
+<h1 *ngIf="isChange" mat-dialog-title>Editar entrada</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Nome</mat-label>
+    <input matInput type="text" id="nome" name="nome" class="form-control"
+    required maxlength="50" pattern="^[^-\s][a-zA-ZÀ-ú ]*" [(ngModel)]="data.nome" #nome="ngModel"> <!-- LIMITA O NOME PARA NO MAX 50 CARACTERES E PERMITE APENAS LETRAS -->
+    <div *ngIf="nome.invalid && (nome.dirty || nome.touched)"
+    class="alert">
+      <div *ngIf="nome.errors?.['pattern']">
+        Apenas letras são permitidas nesse campo.
+      </div>
+    </div>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Tipo</mat-label>
+    <mat-select type="enum" id="tipo" name="tipo" class="form-control" [(ngModel)]="data.tipo" #tipo="ngModel" required>
+      <mat-option *ngFor="let tipo of tipoEnum | keyvalue" [value]="tipo.key"> <!-- CRIA O SELECT BASEADO NOS ENUMS -->
+        {{tipo.value}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Preço</mat-label>
+    <input matInput type="number" id="preco" name="preco" class="form-control" min="0" required max="1000000000" [(ngModel)]="data.preco" #preco="ngModel">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button *ngIf="!isChange" mat-button [mat-dialog-close]="data" [disabled]="preco.invalid || nome.invalid || tipo.invalid">Salvar</button>
+  <button *ngIf="isChange" mat-button [mat-dialog-close]="data" [disabled]="preco.invalid || nome.invalid || tipo.invalid">Editar</button>
+</div>

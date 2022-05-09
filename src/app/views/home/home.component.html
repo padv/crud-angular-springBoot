@@ -1,0 +1,12 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer class="sidenav" mode="side" opened>
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" vertical="true">
+      <mat-button-toggle value="item" #itemToggled checked>Itens</mat-button-toggle>
+      <mat-button-toggle value="pedido">Pedidos</mat-button-toggle>
+    </mat-button-toggle-group>
+  </mat-drawer>
+  <mat-drawer-content class="main">
+    <app-item-table *ngIf="itemToggled.checked"></app-item-table> <!-- Verifica qual tabela ele deve carregar -->
+    <app-pedido-table *ngIf="!itemToggled.checked"></app-pedido-table> 
+  </mat-drawer-content>
+</mat-drawer-container>

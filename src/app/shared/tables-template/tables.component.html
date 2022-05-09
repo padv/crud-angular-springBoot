@@ -1,0 +1,51 @@
+<div class="container">
+    <button *ngIf="showAddButton" mat-button (click)="createRow()" color="primary">Adicionar</button> 
+  
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container [matColumnDef]="displayedColumns[0]">
+        <th mat-header-cell *matHeaderCellDef> {{nameColumns[0]}} </th> <!--SPAGUETTI CODE TOTAL, AJEITAR DEPOIS-->
+        <td mat-cell *matCellDef="let row"> {{row[displayedColumns[0]]}} </td>
+      </ng-container>
+      <ng-container [matColumnDef]="displayedColumns[1]">
+        <th mat-header-cell *matHeaderCellDef> {{nameColumns[1]}} </th>
+        <td mat-cell *matCellDef="let row"> {{row[displayedColumns[1]]}} </td>
+      </ng-container>
+      <ng-container [matColumnDef]="displayedColumns[2]">
+        <th mat-header-cell *matHeaderCellDef> {{nameColumns[2]}} </th>
+        <td mat-cell *matCellDef="let row"> {{row[displayedColumns[2]]}} {{symbols[1]}} </td>
+      </ng-container>
+      <ng-container [matColumnDef]="displayedColumns[3]">
+        <th mat-header-cell *matHeaderCellDef> {{nameColumns[3]}} </th>
+        <td mat-cell *matCellDef="let row"> {{symbols[0]}} {{row[displayedColumns[3]]}} </td>
+      </ng-container>
+      <ng-container [matColumnDef]="displayedColumns[4]">
+        <th mat-header-cell *matHeaderCellDef> {{nameColumns[4]}} </th>
+        <td mat-cell *matCellDef="let row let i = index"> {{symbols[2]}} {{row[displayedColumns[4]]}}
+          <button *ngIf="showEditButton" mat-icon-button (click)="optionsRow(row)" color="primary">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button *ngIf="showDeleteButton" mat-icon-button (click)="confirmDialog(row.id)" color="primary">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button *ngIf="showDetailsButton" mat-icon-button (click)="showDetails(row.id)" color="primary">
+            <mat-icon>search</mat-icon>
+          </button>
+          <mat-form-field *ngIf="nameColumns[4] === 'Quantidade'" appearance="fill">
+            <mat-label>Quantidade</mat-label>
+            <input matInput type="number" id="quantidade" name="quantidade" class="form-control" min="0" max="1000000000" [(ngModel)]="quantidade[i]">
+          </mat-form-field>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-list *ngIf="!showDeleteButton && nameColumns[4] === 'Preço' " role="list">
+      <mat-list-item role="listitem">Preço Total com o Desconto aplicado nos PRODUTOS: R$ {{valorTotal}} </mat-list-item>
+    </mat-list>
+    <div *ngIf="nameColumns[4] === 'Quantidade'">
+      <button mat-icon-button (click)="createPedido()" color="primary">
+        <mat-icon>done</mat-icon>
+      </button>
+    </div>
+
+  </div>
