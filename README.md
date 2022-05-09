@@ -1,27 +1,43 @@
-# CrudAngular
+CRUD Desenvolvido por Victor Padilha para desafio.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
+Front-end desenvolvido em usando Angular e Angular Material.
 
-## Development server
+API desenvolvida em Spring Boot e com o banco de dados PostgreSQL.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+INSTALAÇÃO:
 
-## Code scaffolding
+API
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+(Propriedades da conexão podem ser configuradas em: crud-desafio-victorPadilha\rest-api-crud-desafio\src\main\resources\templates\application.properties)
 
-## Build
+1 - Baixe (www.postgresql.org/download/), instale e suba um banco PostgreSQL na porta 5432.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+2 - Baixe o Spring Tools 4 (JRE 11+) (https://spring.io/tools) e rode o entry point da API RestApiCrudDesafioApplication.java em: crud-desafio-victorPadilha\rest-api-crud-desafio\src\main\java\com\restapidesafio\boot\restapicruddesafio\
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+3 - Servidor irá rodar no localhost:8080
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+4 - Caso deseje testar a API sem um front-end, as requisições devem ser feitas para o localhost:8080/itens e localhost:8080/pedido
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+FRONT-END
+
+1 - Baixe e instale o Node (nodejs.org/en/download/)
+
+2 - No prompt de comando da sua máquina, instale o angular/cli com o seguinte comando:
+
+	npm install -g @angular/cli
+
+3 - Ainda no prompt de comando, navegue para a pasta root do front-end (crud-desafio-victorPadilha\front-crud-desafio\crud-angular)
+e rode o comando
+
+	ng serve
+
+4 - Usando o seu navegador, acesse http://localhost:4200/
+
+Qualquer Dúvida, Sugestão ou se deseja reportar algum bug, enviar um e-mail para victorportopadilha@gmail.com
+
+ 	
+
