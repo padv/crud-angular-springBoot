@@ -42,7 +42,10 @@ API
 3 - Servidor irá rodar no localhost:8080
 
 
-4 - Caso deseje testar a API sem um front-end, as requisições devem ser feitas para o localhost:8080/itens e localhost:8080/pedido
+4 - Caso deseje testar a API sem um front-end, as requisições devem ser feitas para o localhost:8080/itens e localhost:8080/pedido . Use o arquivo .postman_collection 
+como base para as requests. O UUID de um Pedido ou Item deve ser provido na url, por exemplo: localhost:8080/itens/033b8430-7e68-4bd1-b760-29cf42239a45
+
+ 
 
 
 
