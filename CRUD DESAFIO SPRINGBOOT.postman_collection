@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "f016ac4e-f39e-4544-89e7-9923629fb668",
+		"name": "CRUD DESAFIO JAVA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ITEM",
+			"item": [
+				{
+					"name": "LISTAR TODOS ITENS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/itens/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"itens",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR ITEM COM ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/itens/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"itens",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADICIONAR ITEM",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\":1,\r\n    \"nome\":\"pintura\",\r\n    \"preco\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/itens/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"itens",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETAR ITEM COM ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/itens/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"itens",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE ITEM",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"SEsgfsgsgsg\",\r\n    \"preco\": 2424\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/itens/25c59e2f-e40c-4fd0-9bfb-48e74b755e98",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"itens",
+								"25c59e2f-e40c-4fd0-9bfb-48e74b755e98"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PEDIDO",
+			"item": [
+				{
+					"name": "LISTAR TODOS PEDIDOS",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\":\"Serviço\",\r\n    \"nome\":\"Coxinha\",\r\n    \"preco\": 10.233\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pedido/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pedido",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CRIAR PEDIDO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pedido\":\r\n        {\r\n        \"status\": \"ABERTO\",\r\n        \"desconto\": 10\r\n        },\r\n\r\n    \"itens\": \r\n    {\r\n        \"\":1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pedido/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pedido",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETAR PEDIDO COM ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pedido/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pedido",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE PEDIDO",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"FECHADO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pedido/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pedido",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR PEDIDO COM ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pedido/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pedido",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
