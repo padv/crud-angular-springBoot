@@ -35,12 +35,11 @@ API
 
 1 - Baixe (www.postgresql.org/download/), instale e suba um banco PostgreSQL na porta 5432.
 
-
 2 - Baixe o Spring Tools 4 (JRE 11+) (https://spring.io/tools) e rode o entry point da API RestApiCrudDesafioApplication.java em: crud-angular-springBoot\api\src\main\java\com\restapidesafio\boot\restapicruddesafio\
 
+(Se estiver usando o VS Code, é possível que seja nescessário instalar a extensão: "Lombok Annotations Support for VS Code" para evitar problemas com os Setters e Getters)
 
 3 - Servidor irá rodar no localhost:8080
-
 
 4 - Caso deseje testar a API sem um front-end, as requisições devem ser feitas para o localhost:8080/itens e localhost:8080/pedido . Use o arquivo .postman_collection 
 como base para as requests. O UUID de um Pedido ou Item deve ser provido na url, por exemplo: localhost:8080/itens/033b8430-7e68-4bd1-b760-29cf42239a45
