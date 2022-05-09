@@ -48,8 +48,6 @@ export class AdicionarItensNoPedidoTableComponent implements OnInit {
              }
           });
           this.dataSource = displayRows;
-          console.log(this.pedido);
-          console.log(this.dataSource);
           
         });
       }
@@ -58,10 +56,6 @@ export class AdicionarItensNoPedidoTableComponent implements OnInit {
   }
 
   createPedido() { // FUNÇÃO PARA CRIAR NOVO PEDIDO
-    console.log("entrei");
-    console.log(this.quantidade);
-    console.log(this.dataSource);
-
     const itens = new Map<string, number>();
 
     this.dataSource.forEach((row,i) => { 
@@ -70,8 +64,6 @@ export class AdicionarItensNoPedidoTableComponent implements OnInit {
       }     
     });
 
-    console.log(this.pedido);
-    console.log(this.pedido.status);
     const pedido: Pedido = { // CRIA PEDIDO COM O STATUS E DESCONTO CORRETOS
       id: '',
       status: this.pedido.status,
@@ -79,13 +71,12 @@ export class AdicionarItensNoPedidoTableComponent implements OnInit {
       valorTotal: 0
     }
 
-    console.log(Object.fromEntries(itens))
     const requestPedido: RequestPedido = { // CRIA A REQUEST DE PEDIDO
       pedido: pedido,
       itens: Object.fromEntries(itens)
     }
 
-    console.log(requestPedido);
+
     this.pedidoService.createPedido(requestPedido)
     .subscribe();
 

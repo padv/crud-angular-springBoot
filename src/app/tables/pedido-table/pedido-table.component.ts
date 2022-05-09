@@ -49,12 +49,10 @@ export class PedidoTableComponent implements OnInit {
   }
 
   createRow(): void { // CRIA PEDIDO
-    //console.log(this.nomeValido)
     this.openDialog(null);
   }
 
   optionsRow(pedido: Pedido): void { // EDITA PEDIDO
-    console.log(pedido);
     this.openDialog(pedido);
   }
 
@@ -66,7 +64,6 @@ export class PedidoTableComponent implements OnInit {
   }
 
   showDetails(id: string): any { // MÉTODO PARA ABRIR DIALOG COM DETALHES DO PEDIDO
-    console.log(id);
     const detalhesPedidoDialog = this.dialog.open(DetalhesDoPedidoDialogComponent, {
       width: '100%',
       height: '100%',
@@ -90,7 +87,6 @@ export class PedidoTableComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       if (result !== undefined) { // SE RETORNAR undefined, SIGNIFICA QUE USUÁRIO FECHOU OU CANCELOU DIALOG SEM CONFIRMAR
         if (this.dataSource.map(row => row.id).includes(result.id)) { // VERIFICA SE EXISTE LINHA COM A ID PASSADA, SE SIM, FAZ UM EDIT.
           this.pedidoService.editPedido(result)
@@ -103,7 +99,6 @@ export class PedidoTableComponent implements OnInit {
           
 
         } else { // SE NÃO, FAZ UM CREATE
-            console.log(result);
             this.itensDoPedidoDialog(result); // MOSTRA DIALOG DE ITENS DO PEDIDO
         }       
       }
@@ -118,7 +113,6 @@ export class PedidoTableComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       if (result !== undefined) { // SE RETORNAR undefined, SIGNIFICA QUE USUÁRIO FECHOU OU CANCELOU DIALOG SEM CONFIRMAR
         
       }  

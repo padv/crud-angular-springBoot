@@ -48,7 +48,6 @@ export class ItemTableComponent implements OnInit {
   }
 
   createRow(): void { // CRIA LINHA
-    //console.log(this.nomeValido)
     this.openDialog(null);
   }
 
@@ -59,7 +58,6 @@ export class ItemTableComponent implements OnInit {
   deleteRow(id: string): void { // DELETA LINHA
     this.itemService.deleteItem(id)
       .subscribe((data) => {
-        console.log(data);
         if (data.sucesso) {
           this.dataSource = this.dataSource.filter(row => row.id !== id);
         } else {
@@ -90,13 +88,11 @@ export class ItemTableComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+
       if (result !== undefined) { // SE RETORNAR undefined, SIGNIFICA QUE USUÁRIO FECHOU OU CANCELOU DIALOG SEM CONFIRMAR
         if (this.dataSource.map(row => row.id).includes(result.id)) { // VERIFICA SE EXISTE LINHA COM A ID PASSADA, SE SIM, FAZ UM EDIT.
           this.itemService.editItem(result)
             .subscribe((data : any) => {
-              console.log(data.response);
-              console.log(result);
               if (data.sucesso) {
                 const index = this.dataSource.findIndex(row => row.id === result.id);
                 this.dataSource[index] = result;  

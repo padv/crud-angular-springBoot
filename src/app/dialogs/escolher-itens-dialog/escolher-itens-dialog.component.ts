@@ -23,12 +23,6 @@ export class EscolherItensDialogComponent implements OnInit {
 
   ngOnInit(): void {
     
-      /*if (this.data.valorTotal == 1) {
-        console.log(this.data.valorTotal);
-        this.isChange = true;      
-      } else {
-        this.isChange = false;
-      }*/
   }
 
   onCancel(): void {

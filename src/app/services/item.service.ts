@@ -29,8 +29,7 @@ export class ItemService {
     }
 
     deleteItem(id: string): Observable<any> {
-        const log = this.http.delete<any>(this.itemApiUrl + id);
-        console.log(log);   
+        const log = this.http.delete<any>(this.itemApiUrl + id);   
         return log
         .pipe(catchError((err) => {
             alert(err.error.text);

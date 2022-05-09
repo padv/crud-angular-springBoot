@@ -69,10 +69,6 @@ export class DetalhesDoPedidoTableComponent implements OnInit {
     const detalhesDoPedido: DetalhesDoPedido[] = []
     for (const [key, value] of Object.entries(data.itens)) {
     
-      console.log(key); // ID DO ITEM
-      console.log(value.nome); // NOME
-      console.log(value.quantidade); // QUANTIDADE
-
       detalhesDoPedido.push({
         id: key,
         nome: value.nome,
