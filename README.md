@@ -1,17 +1,19 @@
-CRUD Desenvolvido por Victor Padilha para desafio.
+# CRUD Desenvolvido por Victor Padilha para desafio.
 
-Front-end desenvolvido em usando Angular e Angular Material.
+## Front-end desenvolvido em usando Angular e Angular Material.
 
-API desenvolvida em Spring Boot e com o banco de dados PostgreSQL.
+## API desenvolvida em Spring Boot e com o banco de dados PostgreSQL.
 
 A maioria dos dados são validados tanto no front, quanto no back end. 
 
-Qualquer Dúvida, Sugestão ou se deseja reportar algum bug, envie um e-mail para victorportopadilha@gmail.com
+**Como é um projeto para fins didáticos, mesmo sendo uma prática que vai contra os padrões de segurança, resolvir expor a UUID das entradas da tabela no frontend para que fique mais claro as nuances da aplicação.**
+
+**Qualquer Dúvida, Sugestão ou se deseja reportar algum bug, envie um e-mail para victorportopadilha@gmail.com**
 
 
-INSTALAÇÃO:
+# INSTALAÇÃO:
 
-FRONT-END
+## FRONT-END
 
 1 - Baixe e instale o Node (nodejs.org/en/download/)
 
@@ -27,22 +29,22 @@ FRONT-END
 
 	ng serve
 
-4 - Usando o seu navegador, acesse http://localhost:4200/
+5 - Usando o seu navegador, acesse http://localhost:4200/
 
-API
+## API
 
-(Propriedades da conexão podem ser configuradas em: crud-angular-springBoot\api\src\main\resources\templates\application.properties)
+**(Propriedades da conexão podem ser configuradas em: crud-angular-springBoot\api\src\main\resources\templates\application.properties)**
 
 1 - Baixe (www.postgresql.org/download/), instale e suba um banco PostgreSQL na porta 5432. Banco postgres Usuário postgres senha root
 
 2 - Baixe o Spring Tools 4 (JRE 11+) (https://spring.io/tools) e rode o entry point da API RestApiCrudDesafioApplication.java em: crud-angular-springBoot\api\src\main\java\com\restapidesafio\boot\restapicruddesafio\
 
-(Se estiver usando o VS Code, é possível que seja nescessário instalar a extensão: "Lombok Annotations Support for VS Code" para evitar problemas com os Setters e Getters)
+**(Se estiver usando o VS Code, é possível que seja nescessário instalar a extensão: "Lombok Annotations Support for VS Code" para evitar problemas com os Setters e Getters)**
 
 3 - Servidor irá rodar no localhost:8080
 
 4 - Caso deseje testar a API sem um front-end, as requisições devem ser feitas para o localhost:8080/itens e localhost:8080/pedido . Use o arquivo .postman_collection 
-como base para as requests. O UUID de um Pedido ou Item deve ser provido na url, por exemplo: localhost:8080/itens/033b8430-7e68-4bd1-b760-29cf42239a45
+como base para as requests. Caso seja uma requisição envolvendo um Item ou Pedido específico, o UUID de um Pedido ou Item deve ser provido na url, por exemplo: localhost:8080/itens/033b8430-7e68-4bd1-b760-29cf42239a45
 
  
 
