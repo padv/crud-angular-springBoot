@@ -6,7 +6,7 @@
 
 A maioria dos dados são validados tanto no front, quanto no back end. 
 
-**Como é um projeto para fins didáticos, mesmo sendo uma prática que vai contra os padrões de segurança, resolvir expor a UUID das entradas da tabela no front-end para que fique mais claro as nuances da aplicação. **
+**Como é um projeto para fins didáticos, mesmo sendo uma prática que vai contra os padrões de segurança, resolvir expor a UUID das entradas da tabela no front-end para que fique mais claro as nuances da aplicação.**
 
 **Qualquer Dúvida, Sugestão ou se deseja reportar algum bug, envie um e-mail para victorportopadilha@gmail.com**
 
